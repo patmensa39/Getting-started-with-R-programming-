@@ -1,0 +1,134 @@
+---
+title: "Getting Stated with R"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+date: "May 14th 2022"
+theme: cerulean
+---
+
+<!-- For more info on RMarkdown see http://rmarkdown.rstudio.com/ -->
+
+## Name: Mensah Patrick-
+
+### Getting started with R Programming 
+
+### Installing R 
+```{r echo=FALSE}
+## https://cran.r-project.org/
+```
+
+### Installing R-studio
+```{r echo=FALSE}
+## https://www.rstudio.com/products/rstudio/download/
+```
+
+### To get help on "read.table" just type
+```{r echo=FALSE}
+?read.table ## Reading tables
+?anova  ## Anova tables
+?lm  ## Fitting linear models 
+
+```
+### If you forgot the name you can use the following 
+```{r echo=FALSE}
+
+help.search("data input")
+help.search("linear model")
+help.search("glm")
+```
+
+### The find fucntion tells you what package something is located inside 
+
+```{r echo=FALSE, fig.align='center'}
+find("lowess")
+find("glm")
+find("lm")
+```
+
+
+### The apropos function tell you all the names of the search list you want to find. 
+```{r echo=FALSE}
+apropos("glm")
+apropos("lm")
+```
+### if you want to see some worked examples
+```{r echo=FALSE}
+ 
+example("lm")
+```
+
+### Here are some useful range of things R can do
+```{r echo=FALSE, fig.align='center'}
+demo(persp)
+demo(graphics)
+demo(Hershey)
+demo(plotmath)
+```
+
+### Installing R packages 
+
+```{r echo=FALSE, fig.align='center' }
+install.packages("akima")
+install.packages("boot")
+install.packages("car")
+install.packages("lme4")
+installed.packages("meta")
+install.packages("mgcv")
+install.packages("nlme")
+installed.packages("deSolve")
+install.packages("R2jags")
+install.packages("RColorBrewer")
+install.packages("RODBC")
+install.packages("rpart")
+install.packages("spatstat")
+install.packages("spdep")
+installed.packages("tree")
+```
+
+###. Data Editor. 
+
+```{r echo=FALSE}
+library(MASS)
+attach(bacteria)
+View(bacteria)
+```
+
+
+###. To see what you have created in the current section
+
+```{r echo=FALSE}
+objects()
+```
+###. To see which packages and dataframes are currently attached
+
+```{r echo=FALSE}
+search()
+```
+
+###. It is important to remove remove any variable name you created after your code. Example 
+
+```{r echo=FALSE}
+philant <-c(1,2,3,5,6)
+philant
+rm(philant)
+philant    #not found  
+```
+
+###. Detach function
+###. Detach fucntion does not mean a dataframe will disappear. it means the variable within these dataframes, example Area, slope are not accessible directly by name. 
+
+```{r echo=FALSE}
+detach(worms) 
+detach(cars)
+detach(philant)
+```
+
+###. To get rid of everything including all dataframe. 
+
+```{r echo=FALSE}
+rm(list = ls())
+```
+
+
